@@ -38,7 +38,7 @@
     </bluetooth>
  </input>
   
- <output></output>
+ <output></output>                       <!-- INSIEME DI DATI CHE VERRANNO ESPORTATI -->
   
  <views>   <!-- schermate -->
     <view label= "Carica scarica tensione con Arduino">
