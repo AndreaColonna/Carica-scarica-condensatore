@@ -47,6 +47,7 @@
         <input axis="x">tempo</input>
         <input axis="y">tensione</input>
       </graph>
+     </view> 
  </views>
 
   <!-- Bolocco operazioni -->
