@@ -38,7 +38,7 @@
     </bluetooth>
  </input>
   
- <output></output>                       <!-- INSIEME DI DATI CHE VERRANNO ESPORTATI -->
+ <output></output>                       
   
  <views>   <!-- schermate -->
     <view label= "Carica scarica tensione con Arduino">
@@ -50,10 +50,10 @@
      </view> 
  </views>
 
-  <!-- Bolocco operazioni -->
+                                     <!-- Bolocco operazioni -->
  <analysis> </analysis>
  
-  <!-- blocco per esportare i dati -->
+                                   <!-- blocco per esportare i dati -->
   <export>
     <set name="Carica_Scarica_Arduino">
       <data name="tempo (s)">tempo</data>
@@ -62,4 +62,4 @@
   </export>
 
   
-</phyphox>                           <!-- FINE -->     
+</phyphox>                                           <!-- FINE -->     
