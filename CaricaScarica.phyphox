@@ -1,19 +1,64 @@
-<!-- Autore: Colonna Andrea 13 maggio 2022 ore 15:55 
-Misura la tensione in funzione del tempo di un circuito RC quando viene caricato il condensatore e 
-quando viene scaricato R = 10 k ohm mentre il condensatore è pari a 100 microFarad.
-il circuito è sto schematizzato tramite tinkercad nel file 
-https://www.tinkercad.com/things/iUoo0A1f8qX-caricascaricacondensatore1a/editel?sharecode=Ge49-efea5E6g8YfbGY_Op5N58FFwPZv-Ij0ZFqqTaE
--->
-<phyphox version="1.7" locale="it">                         <!-- INIZIO -->
+     <!-- Autore: Colonna Andrea 13 maggio 2022 ore 15:55 
+        Misura la tensione in funzione del tempo di un circuito RC quando viene caricato il condensatore e 
+          quando viene scaricato R = 10 k ohm mentre il condensatore è pari a 100 microFarad.
+          il circuito è sto schematizzato tramite tinkercad nel file 
+          https://www.tinkercad.com/things/iUoo0A1f8qX-caricascaricacondensatore1a/editel?sharecode=Ge49-efea5E6g8YfbGY_Op5N58FFwPZv-Ij0ZFqqTaE
+      -->
+<phyphox version="1.7" locale="it">                                                 <!-- INIZIO -->
 
-<title>Carica e scarica di un condensatore</title>          <!-- TITOLO -->
+ <title>Carica e scarica di un condensatore</title>                                  <!-- TITOLO -->
 
-<category>Esperimenti con ARDUINO</category>                <!-- GRUPPO DI ESPERIMENTI -->
+ <category>Esperimenti con ARDUINO</category>                                    <!-- GRUPPO DI ESPERIMENTI -->
 
- <description>                                              <!-- BREVE DESCRIZIONE DELL' ESPERIMENTO --> 
-  Misura la tensione in funzione del tempo di un circuito RC quando viene caricato il condensatore e 
-  quando viene scaricato R = 10 k ohm mentre il condensatore è pari a 100 microFarad.
+ <description>                                                                <!-- BREVE DESCRIZIONE DELL' ESPERIMENTO --> 
+   Misura la tensione in funzione del tempo di un circuito RC quando viene caricato il condensatore e 
+   quando viene scaricato R = 10 k ohm mentre il condensatore è pari a 100 microFarad.
  </description>
 
+ <link>                                                                        <!-- LINK DOVE SONO MAGGIORI SPIEGAZIONI -->
+   il circuito è sto schematizzato tramite tinkercad nel file 
+   https://www.tinkercad.com/things/iUoo0A1f8qX-caricascaricacondensatore1a/editel?sharecode=Ge49-efea5E6g8YfbGY_Op5N58FFwPZv-Ij0ZFqqTaE   
+ </link>
 
+ <icon>CSA</icon>                                                                 <!-- ICONA -->
+
+ <color>green</color>                                                             <!-- COLORE DELL'ICONA -->
+
+ <data-containers>
+    <!-- variabili per le letture del sensore -->
+    <container size="0" static="false" init="">tensione</container> <!-- Variabile in cui verranno memorizzati i valori della tensione letta dal sensore -->
+    <container size="0" static="false" init="">tempo</container>     <!-- Variabile in cui verranno memorizzati i valori di tempo letti dal sensore -->
+  </data-containers>
+  
+ <input>
+    <!-- Da arduino a phyphox BLE -->
+    <bluetooth name="" mode="notification" rate ="1" subscribeOnStart="false" id="Sense">
+      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="0">tensione</output>
+      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" extra="time">tempo</output>
+    </bluetooth>
+ </input>
+  
+ <output></output>
+  
+ <views>   <!-- schermate -->
+    <view label= "Carica scarica tensione con Arduino">
+      <!-- grafico accelerazione tensione A0 vs tempo -->
+      <graph label="Carica Scarica Condensatore" aspectRatio="2.5" style="lines" lineWidth="1" partialUpdate= "true" history="1" labelX="t" labelY="tensione" labelZ="" unitX="s" unitY="V" unitZ="" logX="false" xPrecision="3" yPrecision="5" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0" mapWidth="0">
+        <input axis="x">tempo</input>
+        <input axis="y">tensione</input>
+      </graph>
+ </views>
+
+  <!-- Bolocco operazioni -->
+ <analysis> </analysis>
+ 
+  <!-- blocco per esportare i dati -->
+  <export>
+    <set name="Carica_Scarica_Arduino">
+      <data name="tempo (s)">tempo</data>
+      <data name="Tensione (V)">tensione</data>
+    </set>
+  </export>
+
+  
 </phyphox>                           <!-- FINE -->     
