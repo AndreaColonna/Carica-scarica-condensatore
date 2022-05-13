@@ -1,7 +1,7 @@
      <!-- Autore: Colonna Andrea 13 maggio 2022 ore 15:55 
         Misura la tensione in funzione del tempo di un circuito RC quando viene caricato il condensatore e 
           quando viene scaricato R = 10 k ohm mentre il condensatore è pari a 100 microFarad.
-          il circuito è sto schematizzato tramite tinkercad nel file 
+          il circuito è sto schematizzato tramite tinkercad nel file
           https://www.tinkercad.com/things/iUoo0A1f8qX-caricascaricacondensatore1a/editel?sharecode=Ge49-efea5E6g8YfbGY_Op5N58FFwPZv-Ij0ZFqqTaE
       -->
 <phyphox version="1.7" locale="it">                                                 <!-- INIZIO -->
